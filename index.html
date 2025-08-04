@@ -3,35 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Spinning Square</title>
+  <title>Spinning Sphere</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background-color: #111;
+      background: #111;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .square {
+    .sphere {
       width: 100px;
       height: 100px;
-      background-color: #4caf50;
-      animation: spin 10s linear infinite;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #4caf50, #1b5e20);
+      animation: spin 5s linear infinite;
     }
 
     @keyframes spin {
       from {
-        transform: rotate(0deg);
+        transform: rotateY(0deg);
       }
       to {
-        transform: rotate(360deg);
+        transform: rotateY(360deg);
       }
+    }
+
+    /* Optional 3D effect support */
+    .sphere {
+      transform-style: preserve-3d;
+      perspective: 800px;
     }
   </style>
 </head>
 <body>
-  <div class="square"></div>
+  <div class="sphere"></div>
 </body>
 </html>
